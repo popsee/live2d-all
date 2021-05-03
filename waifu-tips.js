@@ -144,7 +144,7 @@ function loadWidget(config) {
 		fetch("https://v1.hitokoto.cn")
 			.then(response => response.json())
 			.then(result => {
-				const text = `这是来自<span>「${result.from}」</span>，是<span>${result.creator}</span>采用hitokoto接口`;
+				// const text = `这是来自<span>「${result.from}」</span>，是<span>${result.creator}</span>采用hitokoto接口`;
 				var text = `「${result.hitokoto}」——源：《${result.from}》，作：【${result.from_who||result.creator}】 `
 				showMessage(text, 6000, 9);
 				// setTimeout(() => {
