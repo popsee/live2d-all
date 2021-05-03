@@ -5,11 +5,10 @@
  * 2.模型太少，其多数都很丑，国风元素几乎没有
  * 3.配置界面几乎没有，需要自己去代码里改，费事
  * 4.不支持看板娘贴边方向，可能需要改css, 'waifuEdgeSide'，例如 'left:0'(靠左 0px), 'right:30'(靠右 30px)
- * 这个依赖后期可以放自己库里https://cdn.jsdelivr.net/gh/stevenjoezhang/asteroids/asteroids.js
  */
 /************************************************/
 const homepage = "https://github.com/popzoo"; //工具按钮的主页设置
-
+const aastersUrl = "https://cdn.jsdelivr.net/gh/popsee/live2d-all/asteroids.min.js";//"https://cdn.jsdelivr.net/gh/stevenjoezhang/asteroids/asteroids.js";
 function loadWidget(config) {
 	let {
 		waifuPath,
@@ -78,7 +77,7 @@ function loadWidget(config) {
 				window.ASTEROIDSPLAYERS.push(new Asteroids());
 			} else {
 				const script = document.createElement("script");
-				script.src = "https://cdn.jsdelivr.net/gh/stevenjoezhang/asteroids/asteroids.js";
+				script.src = aastersUrl;
 				document.head.appendChild(script);
 			}
 		});
