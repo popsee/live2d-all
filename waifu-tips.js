@@ -146,7 +146,8 @@ function loadWidget(config) {
 			.then(response => response.json())
 			.then(result => {
 				const text = `这是来自<span>「${result.from}」</span>，是<span>${result.creator}</span>采用hitokoto接口`;
-				showMessage(result.hitokoto, 6000, 9);
+				var text = `「${result.hitokoto}」——源：《${result.from}》，作：【${result.from_who||result.creator}】 `
+				showMessage(text, 6000, 9);
 				// setTimeout(() => {
 				// 	showMessage(text, 4000, 9);
 				// }, 6000);
@@ -175,8 +176,8 @@ function loadWidget(config) {
 			modelTexturesId = localStorage.getItem("modelTexturesId");
 		if (modelId === null) {
 			// 首次访问加载 指定模型 的 指定材质
-			modelId = 1; // 模型 ID
-			modelTexturesId = 1; // 材质 ID
+			modelId = 0; // 模型 ID
+			modelTexturesId = 0; // 材质 ID
 		}
 		loadModel(modelId, modelTexturesId);
 		fetch(waifuPath)// 获取waifu-tips.json的文案
